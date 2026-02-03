@@ -10,6 +10,17 @@
     bus.send(msg_tx) 其中msg_tx需要进行数据的填充
 
     msg_rx = bus.recv(timeout=0.1) 表示阻塞0.1s接收一帧数据
+
+  启动虚拟can接口的命令
+
+    # 1. 加载内核模块
+    sudo modprobe vcan
+    
+    # 2. 添加一个名为 vcan0 的接口
+    sudo ip link add dev vcan0 type vcan
+    
+    # 3. 启用接口
+    sudo ip link set up vcan0
     
     
   
